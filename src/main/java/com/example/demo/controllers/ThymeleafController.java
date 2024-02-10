@@ -38,11 +38,19 @@ public class ThymeleafController {
 		listSubject.add(new Subject(0, "IK1515", "Android"));
 		
 		model.addAttribute("cursos", listSubject);
-		model.addAttribute("mensaje", "Hola a todos!!!!");
+		model.addAttribute("mensaje", "Bienvenido a mi aplicación Spring Boot con Bootstrap");
 		return "thymeleaf3";
 	}
 	
-	
+	//4.Condicionales
+	@GetMapping("/thymeleaf4")
+	public String thymeleaf4(Model model){
+		
+		model.addAttribute("flag", false);
+		model.addAttribute("mensaje", "Buenas noches");
+		
+		return "thymeleaf4";
+	}
 	
 }
 
