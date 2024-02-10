@@ -67,7 +67,11 @@ public class ThymeleafController {
 		return "thymeleaf5";
 	}
 	
-	
+	//6.
+	@GetMapping("/thymeleaf6")
+	public String thymeleaf6(){
+		return "thymeleaf6";
+	}
 	
 }
 

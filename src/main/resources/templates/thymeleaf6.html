@@ -11,7 +11,9 @@
 
 <div class="container">
 	
-	<div th:include="header_fragment :: header"></div>
+	<div th:include="header_fragment :: h2"></div>
+	
+	<div th:replace="header_fragment :: header"></div>
 	
     <div class="row">
         <div class="col-md-6 offset-md-3">
