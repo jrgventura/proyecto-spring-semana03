@@ -52,6 +52,21 @@ public class ThymeleafController {
 		return "thymeleaf4";
 	}
 	
+	//5.
+	@GetMapping("/thymeleaf5")
+	public String thymeleaf5(Model model){
+		
+		List<Subject> listSubject = new ArrayList<Subject>();
+		listSubject.add(new Subject(0, "ABC1515", "Lenguaje de Programación I"));
+		listSubject.add(new Subject(0, "RTY1515", "Lenguaje de Programación II"));
+		listSubject.add(new Subject(0, "UJN1515", "POO"));
+		listSubject.add(new Subject(0, "IK1515", "Android"));
+		
+		model.addAttribute("cursos", listSubject);
+		model.addAttribute("mensaje", "Bienvenido a mi aplicación Spring Boot con Bootstrap");
+		return "thymeleaf5";
+	}
+	
 }
 
 
