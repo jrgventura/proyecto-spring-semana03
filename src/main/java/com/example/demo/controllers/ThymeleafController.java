@@ -69,7 +69,16 @@ public class ThymeleafController {
 	
 	//6.
 	@GetMapping("/thymeleaf6")
-	public String thymeleaf6(){
+	public String thymeleaf6(Model model){
+		
+		List<Subject> listSubject = new ArrayList<Subject>();
+		listSubject.add(new Subject(1, "ABC1515", "Lenguaje de Programación I"));
+		listSubject.add(new Subject(2, "RTY1515", "Lenguaje de Programación II"));
+		listSubject.add(new Subject(3, "UJN1515", "POO"));
+		listSubject.add(new Subject(4, "IK1515", "Android"));
+		
+		model.addAttribute("cursos", listSubject);
+		
 		return "thymeleaf6";
 	}
 	
