@@ -11,7 +11,7 @@ public class IndexController {
 
 	@GetMapping("/index")
 	public String showIndex() {
-		return "index";
+		return "home";
 	}
 	
 	@PostMapping("/login")
