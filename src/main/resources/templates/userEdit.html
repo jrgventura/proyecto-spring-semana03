@@ -33,7 +33,11 @@
 	
     <div class="container mt-5">
         <h1 class="mt-5">Editar de Usuario</h1>
+        
         <form action="/users/edit" method="post">
+			
+			<input type="hidden" th:value="${user.id}" name="id" />
+			
             <div class="form-group">
                 <label for="nombreCurso">Nombre del Usuario</label>
                 <input type="text" class="form-control" 
@@ -49,6 +53,7 @@
 
             <button type="submit" class="btn btn-primary">Editar Usuario</button>
         </form>
+        
     </div>
     
     <!-- Agregar la referencia a los archivos JavaScript de Bootstrap (localmente o a través de CDN) -->
