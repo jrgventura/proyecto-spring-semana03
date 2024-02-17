@@ -70,7 +70,9 @@
 					
 					<div class="col-md-1">						
 		                
-		                <a th:href="@{'/users/delete/' + ${usuario.id} }" class="btn btn-danger">Eliminar</a>
+		                <a th:href="@{'/users/delete/' + ${usuario.id} }" 
+		                	onclick="return confirm('¿Está seguro de eliminar?');"
+		                	class="btn btn-danger">Eliminar</a>
 		                
 					</div>
 					
