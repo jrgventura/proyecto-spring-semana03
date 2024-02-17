@@ -57,9 +57,6 @@ public class UserController {
 	public String getUserByID(@PathVariable Long id, Model model) {
 		User user = userService.getUserById(id);
 		
-		System.out.println(user.email);
-		System.out.println(user.name);
-		
 		model.addAttribute("user", user);
 		return "userEdit";
 	}
