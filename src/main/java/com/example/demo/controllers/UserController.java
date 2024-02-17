@@ -61,7 +61,21 @@ public class UserController {
 		return "userEdit";
 	}
 	
-	
+	@PostMapping("/edit")
+	public String editUSer(@RequestParam("id") Long id, @RequestParam("name") String name, 
+			@RequestParam("email") String email, Model model) {
+		
+		User user = userService.getUserById(id);
+		user.email = email;
+		user.name = name;
+		
+		userService.createUser(user);
+		
+		List<User> listUser = userService.getAllUser();
+		model.addAttribute("users", listUser);
+		
+		return "userList";
+	}
 	
 	
 	
