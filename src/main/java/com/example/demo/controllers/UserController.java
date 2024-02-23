@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.model.Empresa;
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 
@@ -39,7 +40,7 @@ public class UserController {
 	@PostMapping("/register")
 	public String createUSer(@RequestParam("name") String name, 
 			@RequestParam("email") String email, Model model) {
-		
+				
 		User user = new User();
 		user.email = email;
 		user.name = name;

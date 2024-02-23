@@ -26,7 +26,7 @@ public class Producto {
 	public BigDecimal precio;
 	
 	@ManyToOne
-	@JoinColumn(name = "id", nullable = false)
+	@JoinColumn(name = "idEmpresa", nullable = false)
 	public Empresa empresa;
 	
 }
