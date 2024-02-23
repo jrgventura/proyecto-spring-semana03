@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.model.Producto;
+import com.example.demo.service.EmpresaService;
 import com.example.demo.service.ProductoService;
 
 @Controller
@@ -17,6 +18,9 @@ public class ProductoController {
 
 	@Autowired
 	private ProductoService productoService;
+	
+	@Autowired
+	private EmpresaService empresaService;
 	
 	@GetMapping("/productos")
 	public String getAllProduct(Model model) {
@@ -30,9 +34,20 @@ public class ProductoController {
 			System.out.println(producto.empresa.nombre);
 		}
 		
-		
-		
 		return "productList";
 	}
 	
+	@GetMapping("/register")
+	public String register(Model model) {
+		model.addAttribute("empresas", empresaService.getAllEmpresas());
+		return "productRegister";
+	}
+	
 }
+
+
+
+
+
+
+
