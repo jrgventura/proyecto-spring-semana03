@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.model.Empresa;
 import com.example.demo.model.Producto;
+import com.example.demo.model.User;
 import com.example.demo.service.EmpresaService;
 import com.example.demo.service.ProductoService;
 
@@ -95,6 +96,18 @@ public class ProductoController {
 		
 		return "productList";
 	}
+	
+	@GetMapping("/delete/{id}")
+	public String deleteUser(@PathVariable Long id, Model model) {
+		userService.deleteUser(id);
+		
+		List<User> listUser = userService.getAllUser();
+		model.addAttribute("users", listUser);
+		
+		return "userList";
+	}
+	
+	
 	
 }
 
