@@ -45,16 +45,16 @@
 			<div class="col-md-1">
                 <h5>Id</h5>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-3">
                 <h5>Nombre del Producto</h5>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <h5>Precio</h5>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <h5>Empresa</h5>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <h5>Acciones</h5>
             </div>
         </div>
@@ -63,9 +63,9 @@
             <div th:each="producto : ${productos}" class="list-group-item">
                 <div class="row">
                     <div class="col-md-1" th:text="${producto.id}"></div>
-                    <div class="col-md-5" th:text="${producto.nombre}"></div>
-                    <div class="col-md-4" th:text="${producto.precio}"></div>
-                    <div class="col-md-4" th:text="${producto.empresa.nombre}"></div>
+                    <div class="col-md-3" th:text="${producto.nombre}"></div>
+                    <div class="col-md-2" th:text="${producto.precio}"></div>
+                    <div class="col-md-3" th:text="${producto.empresa.nombre}"></div>
                     <div class="col-md-1">						
 						
 						<a th:href="@{'/users/edit/' + ${producto.id} }" class="btn btn-warning">Editar</a>
