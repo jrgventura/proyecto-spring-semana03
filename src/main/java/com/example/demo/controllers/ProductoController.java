@@ -54,7 +54,10 @@ public class ProductoController {
 
 		producto.empresa = empresa;
 		
+		productoService.createProducto(producto);
 		
+		model.addAttribute("productos", productoService.getAllProducts());
+		model.addAttribute("empresas", empresaService.getAllEmpresas());
 		
 		return "productList";
 	}
