@@ -99,12 +99,12 @@ public class ProductoController {
 	
 	@GetMapping("/delete/{id}")
 	public String deleteUser(@PathVariable Long id, Model model) {
-		userService.deleteUser(id);
+		productoService.deleteProduct(id);
 		
-		List<User> listUser = userService.getAllUser();
-		model.addAttribute("users", listUser);
+		model.addAttribute("productos", productoService.getAllProducts());
+		model.addAttribute("empresas", empresaService.getAllEmpresas());
 		
-		return "userList";
+		return "productList";
 	}
 	
 	
