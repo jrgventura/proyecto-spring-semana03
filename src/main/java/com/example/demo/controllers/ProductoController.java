@@ -75,6 +75,27 @@ public class ProductoController {
 	}
 	
 	
+	@PostMapping("/edit")
+	public String createProduct(@RequestParam("id") Long id, @RequestParam("name") String name, 
+			@RequestParam("precio") BigDecimal precio,
+			@RequestParam("idEmpresa") Long idEmpresa, Model model) {
+		
+		Producto producto = productoService.getProductoByID(id);
+		producto.nombre = name;
+		producto.precio = precio;
+		
+		Empresa empresa = empresaService.getEmpresaById(idEmpresa);
+
+		producto.empresa = empresa;
+		
+		productoService.createProducto(producto);
+		
+		model.addAttribute("productos", productoService.getAllProducts());
+		model.addAttribute("empresas", empresaService.getAllEmpresas());
+		
+		return "productList";
+	}
+	
 }
 
 
