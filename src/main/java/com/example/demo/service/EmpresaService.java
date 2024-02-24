@@ -18,5 +18,9 @@ public class EmpresaService {
 		return empresaRepository.findAll();
 	}
 	
+	public Empresa getEmpresaById(Long id) {
+		return empresaRepository.findById(id).orElse(null);
+	}
+	
 	
 }

@@ -41,6 +41,20 @@ public class ProductoController {
 	}
 	
 	
+	@PostMapping("/register")
+	public String createProduct(@RequestParam("name") String name, 
+			@RequestParam("precio") BigDecimal precio,
+			@RequestParam("id") Long id, Model model) {
+		
+		Producto producto = new Producto();
+		producto.nombre = name;
+		producto.precio = precio;
+		
+		
+		
+		return "productList";
+	}
+	
 	
 }
 
