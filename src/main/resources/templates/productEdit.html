@@ -53,7 +53,8 @@
             <div class="form-group">
 				<label for="descripcionCurso">Empresa</label>
 				<select class="form-control" name="id">
-				    <option th:each="empresa: ${empresas}" th:value="${empresa.idEmpresa}" th:text="${empresa.nombre}"></option>
+				    <option th:each="empresa: ${empresas}" th:value="${empresa.idEmpresa}" th:text="${empresa.nombre}"
+				    	th:selected="${producto.empresa.idEmpresa == empresa.idEmpresa}"></option>
 				</select>
 			</div>
 
