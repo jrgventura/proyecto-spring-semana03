@@ -50,6 +50,10 @@ public class ProductoController {
 		producto.nombre = name;
 		producto.precio = precio;
 		
+		Empresa empresa = empresaService.getEmpresaById(id);
+
+		producto.empresa = empresa;
+		
 		
 		
 		return "productList";
