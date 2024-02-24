@@ -1,13 +1,18 @@
 package com.example.demo.controllers;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.model.Empresa;
 import com.example.demo.model.Producto;
 import com.example.demo.service.EmpresaService;
 import com.example.demo.service.ProductoService;
@@ -24,17 +29,9 @@ public class ProductoController {
 	
 	@GetMapping("/productos")
 	public String getAllProduct(Model model) {
-		
 		List<Producto> lisProductos = productoService.getAllProducts();
-		
-		for (Producto producto : lisProductos ) {
-			System.out.println(producto.id);
-			System.out.println(producto.nombre);
-			System.out.println(producto.empresa.idEmpresa);
-			System.out.println(producto.empresa.nombre);
-		}
-		
-		return "productList";
+		model.addAttribute("productos", lisProductos);
+        return "productList";
 	}
 	
 	@GetMapping("/register")
@@ -42,6 +39,8 @@ public class ProductoController {
 		model.addAttribute("empresas", empresaService.getAllEmpresas());
 		return "productRegister";
 	}
+	
+	
 	
 }
 
