@@ -63,6 +63,18 @@ public class ProductoController {
 	}
 	
 	
+	@GetMapping("/edit/{id}")
+	public String edit(@PathVariable Long id, Model model) {
+		
+		Producto producto = productoService.getProductoByID(id);
+		
+		model.addAttribute("producto", producto);
+		model.addAttribute("empresas", empresaService.getAllEmpresas());
+		
+		return "productEdit";
+	}
+	
+	
 }
 
 
