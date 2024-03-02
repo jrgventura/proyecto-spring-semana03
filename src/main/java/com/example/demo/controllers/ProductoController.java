@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.model.Empresa;
 import com.example.demo.model.Producto;
-import com.example.demo.model.User;
 import com.example.demo.service.EmpresaService;
 import com.example.demo.service.ProductoService;
 
