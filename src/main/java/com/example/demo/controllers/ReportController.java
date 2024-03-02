@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +16,7 @@ import com.example.demo.model.Producto;
 
 import jakarta.servlet.http.HttpServletResponse;
 import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
@@ -53,8 +55,9 @@ public class ReportController {
 		response.setHeader("Content-disposition", "filename=reporte_ejemplo.pdf");
 		
 		// 4. Exportar reporte
+		final OutputStream outputStream = response.getOutputStream();
 		
-		
+		JasperExportManager.exportReportToPdfStream(jasperStream, outputStream);
 		
 		
 	}
