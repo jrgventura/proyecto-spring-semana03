@@ -58,7 +58,7 @@ public class ReportController {
 		// 4. Exportar reporte
 		final OutputStream outputStream = response.getOutputStream();
 		
-		JasperExportManager.exportReportToPdfStream(jasperStream, outputStream);
+		JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
 		
 		
 	}
