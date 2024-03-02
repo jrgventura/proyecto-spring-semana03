@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.model.Producto;
+import com.example.demo.model.Reporte;
 
 import jakarta.servlet.http.HttpServletResponse;
 import net.sf.jasperreports.engine.JRException;
@@ -38,11 +39,11 @@ public class ReportController {
 		Map<String, Object> params = new HashMap<>();
 		params.put("usuario", "Jorge Ventura");
 		
-		List<Producto> listProduct = new ArrayList<>();
-		listProduct.add(new Producto());
-		listProduct.add(new Producto());
-		listProduct.add(new Producto());
-		listProduct.add(new Producto());
+		List<Reporte> listProduct = new ArrayList<>();
+		listProduct.add(new Reporte("1", "Producto 1", "12.00"));
+		listProduct.add(new Reporte("2", "Producto 2", "0.50"));
+		listProduct.add(new Reporte("3", "Producto 3", "1.50"));
+		listProduct.add(new Reporte("4", "Producto 4", "120.00"));
 		
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(listProduct);
 		
